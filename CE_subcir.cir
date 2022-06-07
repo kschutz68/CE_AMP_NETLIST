@@ -1,0 +1,21 @@
+CE_subcir.CIR - CE AMP SUBCIRCUIT
+*
+.SUBCKT CE_AMP   in out vcc gnd
+RS	in	2	100
+C1	2	3	1UF
+R1	vcc	3	22K
+R2	3	gnd	11K
+Q1	4  3	5	Q2N2222
+RC	vcc	4	1800
+RE1	5	6	600
+RE2	6	gnd	600
+CE	6	gnd	50UF
+CL	4	out	1UF
+RL	out	gnd	30K
+*
+.model Q2N2222  NPN(Is=3.108f Xti=3 Eg=1.11 Vaf=131.5 Bf=217.5 Ne=1.541
++               Ise=190.7f Ikf=1.296 Xtb=1.5 Br=6.18 Nc=2 Isc=0 Ikr=0.02 Rc=1
++               Cjc=14.57p Vjc=.75 Mjc=.3333 Fc=.5 Cje=26.08p Vje=.75
++               Mje=.3333 Tr=51.35n Tf=451p Itf=.1 Vtf=10 Xtf=2 Rb=10)
+*
+.ENDS
